@@ -8,7 +8,8 @@ body {
     background: rgba(255, 255, 255, 0.7); 
     backdrop-filter: blur(10px); 
 }
-/* Effet de bordure tournante */
+
+/* 1. Définition de la propriété d'angle */
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -19,25 +20,36 @@ body {
   to { --angle: 360deg; }
 }
 
+/* 2. Configuration des cartes de services */
 .group {
   position: relative;
   z-index: 0;
-  overflow: hidden; /* Garde l'effet dans les bords arrondis */
+  overflow: hidden; 
+  background-color: white; /* On force un fond solide pour le group::after */
 }
 
-/* Animation de la ligne bleue */
+/* La ligne bleue qui tourne - Active par défaut (Mobile) */
 .group::before {
     content: '' !important;
     position: absolute !important;
-    z-index: -1 !important;
-    inset: -2px !important; /* On l'épaissit un peu pour bien la voir sur mobile */
+    z-index: -2 !important; /* On le descend d'un cran */
+    inset: -5px !important; /* On élargit pour être sûr que ça dépasse */
     background: conic-gradient(from var(--angle), transparent 70%, #2563eb 100%) !important;
     animation: rotate 4s linear infinite !important;
-    opacity: 1 !important; /* On force la visibilité */
-    transition: opacity 0.4s ease;
+    opacity: 1 !important; 
 }
 
-/* On ne la cache que sur les grands écrans (PC) */
+/* 3. Le cache interne : Crucial pour masquer le centre du gradient */
+.group::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 2px; /* L'épaisseur de ta bordure bleue */
+  background: white; /* Doit être la même couleur que le fond de ta carte */
+  border-radius: inherit;
+}
+
+/* 4. Gestion PC (Desktop) : On cache et on affiche au survol */
 @media (min-width: 1024px) {
     .group::before {
         opacity: 0 !important;
@@ -46,19 +58,13 @@ body {
         opacity: 1 !important;
     }
 }
-/* Le cache interne : il reprend le fond de la carte pour ne laisser voir que le bord */
-.group::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 2px; /* Définit l'épaisseur de ta ligne bleue (ici 2px) */
-  background: inherit; 
-  border-radius: inherit;
+
+/* 5. Effet Shimmer pour le bouton */
+.shimmer {
+    position: relative;
+    overflow: hidden;
 }
-/* style.css */
-/* style.css */
-/* style.css */
-/* style.css */
+
 .shimmer::after {
     content: '';
     position: absolute;
@@ -69,12 +75,12 @@ body {
     background: linear-gradient(
         to right,
         transparent,
-        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.4),
         transparent
     );
     transform: skewX(-25deg);
     animation: shine 3s infinite;
-    z-index: 5; /* Passe derrière le texte (z-10) mais devant le fond du bouton */
+    z-index: 2;
 }
 
 @keyframes shine {
