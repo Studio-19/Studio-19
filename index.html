@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 19 | Création Web & E-Business</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-extrabold text-xl tracking-tighter uppercase">Studio 19<span class="text-blue-600">.</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#accueil" class="hover:text-blue-600 transition">Accueil</a>
+                <a href="#parcours" class="hover:text-blue-600 transition">Mon Parcours</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#contact" class="text-blue-600 font-bold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="accueil" class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+        <div data-aos="fade-down" class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase bg-blue-50 text-blue-600 rounded-full">
+            Étudiant & Développeur Web
+        </div>
+        <h1 data-aos="fade-up" data-aos-delay="200" class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight">
+            Design <span class="text-slate-400">épuré.</span><br>Code <span class="italic text-blue-600">propre.</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="400" class="max-w-xl text-lg text-slate-500 mb-10">
+            J'accompagne vos projets web avec la fraîcheur d'un regard neuf et l'expertise stratégique de l'e-business.
+        </p>
+        <div data-aos="zoom-in" data-aos-delay="600">
+    <a href="#contact" class="shimmer relative overflow-hidden inline-block bg-slate-900 text-white px-10 py-4 rounded-full font-bold hover:bg-blue-600 transition shadow-xl shadow-blue-100">
+        <span class="relative z-10">Lancer mon projet</span>
+    </a>
+</div>
+    </section>
+
+    <section id="parcours" class="py-24 px-6 bg-white overflow-hidden border-y border-slate-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            
+            <div data-aos="fade-right" class="relative w-full md:w-1/2">
+                <div class="aspect-square bg-slate-900 rounded-[3rem] p-12 flex flex-col justify-center transform -rotate-2 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                    <span class="text-blue-500 font-bold text-7xl mb-4">19</span>
+                    <h3 class="text-3xl text-white font-bold leading-tight uppercase tracking-tighter">
+                        Ans & Déjà <br> À votre service.
+                    </h3>
+                    <div class="mt-8 pt-8 border-t border-slate-800">
+                        <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">Actuellement en :</p>
+                        <p class="text-white font-semibold">Bachelier E-Business (2ème année)</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 h-32 w-32 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
+            </div>
+
+            <div data-aos="fade-left" class="w-full md:w-1/2">
+                <h2 class="text-4xl font-bold mb-8 italic">Mon <span class="text-blue-600 underline decoration-2 underline-offset-8 font-extrabold">Parcours</span>.</h2>
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>
+                        Passionné par le numérique, je suis étudiant en <strong>deuxième année d'E-Business</strong>. Cette formation me permet de ne pas seulement créer des sites, mais de comprendre vos objectifs commerciaux.
+                    </p>
+                    <p>
+                        Je débute dans la création de sites personnalisés. En me faisant confiance, vous bénéficiez d'un <strong>interlocuteur dédié</strong> qui prendra le temps nécessaire pour parfaire chaque détail de votre interface.
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600 shadow-sm">
+                        <p class="text-slate-900 font-medium italic">
+                            "Mon objectif : vous offrir un résultat professionnel pour un <strong>budget accessible</strong>, tout en construisant mon expérience à vos côtés."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-white px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                <h2 data-aos="fade-right" class="text-4xl font-bold">Mes services <br><span class="text-blue-600 italic">sur-mesure.</span></h2>
+                <p data-aos="fade-left" class="text-slate-500 max-w-xs uppercase text-xs font-bold tracking-widest">
+                    Performance, Business & Design.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100" class="group p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30">
+                    <h3 class="text-2xl font-bold mb-4">Création de Sites</h3>
+                    <p class="text-slate-500 group-hover:text-slate-400 mb-6">Des sites vitrines modernes avec HTML/Tailwind pour une image de marque forte.</p>
+                    <div class="text-blue-600 font-bold">01</div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200" class="group p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30">
+                    <h3 class="text-2xl font-bold mb-4">Responsive Design</h3>
+                    <p class="text-slate-500 group-hover:text-slate-400 mb-6">Votre site sera parfaitement adapté sur smartphone, tablette et ordinateur.</p>
+                    <div class="text-blue-600 font-bold">02</div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="300" class="group p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30">
+                    <h3 class="text-2xl font-bold mb-4">Mise en ligne</h3>
+                    <p class="text-slate-500 group-hover:text-slate-400 mb-6">Gestion du déploiement, de l'hébergement sécurisé et de votre nom de domaine.</p>
+                    <div class="text-blue-600 font-bold">03</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-slate-900 text-white rounded-t-[3rem]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-bold mb-8 italic">Parlons de votre projet.</h2>
+                <p data-aos="fade-up" data-aos-delay="200" class="text-slate-400 text-lg">
+                    Une question ? Un devis gratuit ? Je vous réponds sous 24h.
+                </p>
+            </div>
+
+            <form id="contact-form" data-aos="fade-up" data-aos-delay="400" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="user_name" placeholder="Votre nom" required 
+                        class="w-full bg-slate-800/50 border border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-blue-500 transition-all text-white placeholder-slate-500">
+                    <input type="email" name="user_email" placeholder="Votre email" required 
+                        class="w-full bg-slate-800/50 border border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-blue-500 transition-all text-white placeholder-slate-500">
+                </div>
+                <textarea name="message" rows="5" placeholder="Votre message (projet, budget, délais...)" required 
+                    class="w-full bg-slate-800/50 border border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-blue-500 transition-all text-white placeholder-slate-500"></textarea>
+                
+                <button type="submit" id="submit-btn" class="w-full bg-blue-600 text-white font-bold py-5 rounded-2xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20 uppercase tracking-widest text-sm">
+                    Envoyer le message
+                </button>
+                <p id="status-msg" class="text-center text-sm font-medium mt-4"></p>
+            </form>
+            
+            <div class="mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-6 uppercase font-bold tracking-widest">
+                <p>© 2026 — Studio 19</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/doryann-genin-479a54392/" class="hover:text-white transition">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            easing: 'ease-in-out-cubic',
+        });
+
+        (function() {
+            emailjs.init("-pjj-QOK98ok26otu");
+        })();
+
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const statusMsg = document.getElementById('status-msg');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            submitBtn.innerText = "Envoi en cours...";
+            submitBtn.disabled = true;
+
+            emailjs.sendForm('service_2z297aa', 'template_ypq2k8v', this)
+                .then(function() {
+                    statusMsg.innerText = "Message envoyé avec succès ! ✨";
+                    statusMsg.style.color = "#4ade80";
+                    contactForm.reset();
+                    submitBtn.innerText = "Envoyer le message";
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    statusMsg.innerText = "Erreur lors de l'envoi... Réessayez.";
+                    statusMsg.style.color = "#f87171";
+                    submitBtn.innerText = "Réessayer";
+                    submitBtn.disabled = false;
+                    console.log('FAILED...', error);
+                });
+        });
+    </script>
+</body>
+</html>
