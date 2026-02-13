@@ -39,23 +39,28 @@ body {
     opacity: 1 !important; 
 }
 
-/* 3. Le cache interne : Crucial pour masquer le centre du gradient */
+/* 3. Le cache interne : On ajoute une transition pour la couleur */
 .group::after {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 2px; /* L'épaisseur de ta bordure bleue */
-  background: white; /* Doit être la même couleur que le fond de ta carte */
+  inset: 2px; 
+  background: white; 
   border-radius: inherit;
+  transition: background 0.5s ease; /* Pour que le changement de couleur soit fluide */
 }
 
-/* 4. Gestion PC (Desktop) : On cache et on affiche au survol */
+/* 4. Gestion PC (Desktop) : On gère l'opacité ET la couleur du fond au survol */
 @media (min-width: 1024px) {
     .group::before {
         opacity: 0 !important;
     }
     .group:hover::before {
         opacity: 1 !important;
+    }
+    /* ICI : On force le cache à devenir noir quand on survole la carte */
+    .group:hover::after {
+        background: #0f172a; /* C'est le code couleur de slate-900 */
     }
 }
 
