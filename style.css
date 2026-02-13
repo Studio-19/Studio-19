@@ -25,33 +25,27 @@ body {
   overflow: hidden; /* Garde l'effet dans les bords arrondis */
 }
 
-/* style.css */
-
-/* 1. La ligne tourne PAR DÉFAUT sur les petits écrans (Mobile) */
+/* Animation de la ligne bleue */
 .group::before {
-  content: '';
-  position: absolute;
-  z-index: -2;
-  inset: -50%;
-  background: conic-gradient(from var(--angle), transparent 70%, #2563eb 100%);
-  animation: rotate 4s linear infinite;
-  opacity: 1; /* Toujours visible sur mobile */
-  transition: opacity 0.4s ease;
+    content: '' !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    inset: -2px !important; /* On l'épaissit un peu pour bien la voir sur mobile */
+    background: conic-gradient(from var(--angle), transparent 70%, #2563eb 100%) !important;
+    animation: rotate 4s linear infinite !important;
+    opacity: 1 !important; /* On force la visibilité */
+    transition: opacity 0.4s ease;
 }
 
-/* 2. Sur les grands écrans (Ordinateur), on revient au comportement de survol */
+/* On ne la cache que sur les grands écrans (PC) */
 @media (min-width: 1024px) {
-  .group::before {
-    opacity: 0; /* Invisible par défaut sur PC */
-  }
-  
-  .group:hover::before {
-    opacity: 1; /* Devient visible au survol sur PC */
-  }
+    .group::before {
+        opacity: 0 !important;
+    }
+    .group:hover::before {
+        opacity: 1 !important;
+    }
 }
-
-/* Le reste du code (rotate, @property, etc.) reste identique */
-
 /* Le cache interne : il reprend le fond de la carte pour ne laisser voir que le bord */
 .group::after {
   content: '';
