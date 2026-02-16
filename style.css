@@ -1,15 +1,12 @@
 /* style.css */
+
 body { 
     font-family: 'Plus Jakarta Sans', sans-serif; 
     overflow-x: hidden; 
+    background-color: #f8fafc; /* Pour bien voir les blocs blancs */
 }
 
-.bg-glass { 
-    background: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: blur(10px); 
-}
-
-/* 1. Définition de la propriété d'angle */
+/* 1. Définition de la propriété d'angle pour l'animation */
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -20,51 +17,59 @@ body {
   to { --angle: 360deg; }
 }
 
-/* 2. Configuration des cartes de services */
+/* 2. Configuration des cartes de services (Les blocs) */
 .group {
   position: relative;
-  z-index: 0;
+  z-index: 1; /* On donne une base de pile */
   overflow: hidden; 
-  background-color: white; /* On force un fond solide pour le group::after */
+  background-color: white !important; /* Force le bloc à être blanc */
+  border-radius: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* La ligne bleue qui tourne - Active par défaut (Mobile) */
+/* 3. La ligne bleue qui tourne (Le bord) */
 .group::before {
     content: '' !important;
     position: absolute !important;
-    z-index: -2 !important; /* On le descend d'un cran */
-    inset: -5px !important; /* On élargit pour être sûr que ça dépasse */
+    z-index: -2 !important; /* Tout au fond */
+    inset: -5px !important;
     background: conic-gradient(from var(--angle), transparent 70%, #2563eb 100%) !important;
     animation: rotate 4s linear infinite !important;
-    opacity: 1 !important; 
+    opacity: 1 !important; /* Visible par défaut sur mobile comme tu voulais */
 }
 
-/* 3. Le cache interne : On ajoute une transition pour la couleur */
+/* 4. Le cache interne (Le rectangle blanc à l'intérieur) */
 .group::after {
   content: '';
   position: absolute;
-  z-index: -1;
-  inset: 2px; 
+  z-index: -1; /* Entre la ligne bleue et ton texte */
+  inset: 2px; /* Épaisseur de la bordure bleue */
   background: white; 
   border-radius: inherit;
-  transition: background 0.5s ease; /* Pour que le changement de couleur soit fluide */
+  transition: background 0.5s ease;
 }
 
-/* 4. Gestion PC (Desktop) : On gère l'opacité ET la couleur du fond au survol */
+/* 5. Gestion PC (Desktop) */
 @media (min-width: 1024px) {
     .group::before {
-        opacity: 0 !important;
+        opacity: 0 !important; /* Caché par défaut sur PC */
     }
     .group:hover::before {
-        opacity: 1 !important;
+        opacity: 1 !important; /* Apparaît au survol */
     }
-    /* ICI : On force le cache à devenir noir quand on survole la carte */
+    /* Au survol sur PC, l'intérieur devient sombre */
     .group:hover::after {
-        background: #0f172a; /* C'est le code couleur de slate-900 */
+        background: #0f172a; 
     }
 }
 
-/* 5. Effet Shimmer pour le bouton */
+/* --- AUTRES EFFETS --- */
+
+.bg-glass { 
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(10px); 
+}
+
 .shimmer {
     position: relative;
     overflow: hidden;
@@ -77,12 +82,7 @@ body {
     left: -100%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(255, 255, 255, 0.4),
-        transparent
-    );
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
     transform: skewX(-25deg);
     animation: shine 3s infinite;
     z-index: 2;
