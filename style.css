@@ -63,6 +63,44 @@ body {
     }
 }
 
+/* Blob Animation - VERSION BOOSTÉE */
+.blob-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0; /* Assure-toi que c'est bien derrière le texte */
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 800px; /* On augmente encore la taille */
+  height: 800px;
+  top: -200px;
+  left: -200px;
+  /* On utilise un bleu plus vif et moins transparent */
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(59, 130, 246, 0.2) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px); 
+  /* On réduit le temps (10s) pour que le mouvement soit plus visible à l'œil */
+  animation: moveBlob 12s ease-in-out infinite; 
+}
+
+@keyframes moveBlob {
+  0% { 
+    transform: translate(0, 0) scale(1); 
+  }
+  33% { 
+    transform: translate(60vw, 10vh) scale(1.2); /* Voyage vers la droite */
+  }
+  66% { 
+    transform: translate(20vw, 50vh) scale(0.8); /* Voyage vers le bas */
+  }
+  100% { 
+    transform: translate(0, 0) scale(1); 
+  }
+}
+
 /* --- AUTRES EFFETS --- */
 
 .bg-glass { 
