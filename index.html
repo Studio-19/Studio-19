@@ -13,23 +13,23 @@
 <body class="bg-slate-50 text-slate-900">
 
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-extrabold text-xl tracking-tighter uppercase">Studio 19<span class="text-blue-600">.</span></div>
-            
-            <button id="menu-btn" class="md:hidden text-slate-900 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="font-extrabold text-xl tracking-tighter uppercase">Studio 19<span class="text-blue-600">.</span></div>
+        
+        <button id="menu-btn" class="md:hidden text-slate-900 focus:outline-none z-50">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
 
-<div id="nav-menu" class="hidden absolute top-20 left-4 right-4 bg-white/70 backdrop-blur-xl border border-slate-200/50 flex-col p-8 space-y-6 rounded-[2rem] shadow-2xl shadow-blue-500/10 md:static md:flex md:flex-row md:w-auto md:border-none md:bg-transparent md:p-0 md:space-y-0 md:space-x-8 md:rounded-none md:shadow-none text-sm font-semibold uppercase tracking-widest transition-all">                <a href="#accueil" class="nav-link hover:text-blue-600 transition">Accueil</a>
-                <a href="#parcours" class="nav-link hover:text-blue-600 transition">Mon Parcours</a>
-                <a href="#services" class="nav-link hover:text-blue-600 transition">Services</a>
-                <a href="#contact" class="nav-link text-blue-600 font-bold">Contact</a>
-            </div>
+        <div id="nav-menu" class="hidden absolute top-20 left-4 right-4 bg-white/80 backdrop-blur-2xl border border-white/20 flex-col p-8 space-y-6 rounded-[2rem] shadow-2xl md:static md:flex md:flex-row md:w-auto md:border-none md:bg-transparent md:p-0 md:space-y-0 md:space-x-8 md:rounded-none md:shadow-none text-[13px] font-extrabold uppercase tracking-[0.2em] text-slate-900 transition-all duration-300">
+            <a href="#accueil" class="nav-link hover:text-blue-600 transition">Accueil</a>
+            <a href="#parcours" class="nav-link hover:text-blue-600 transition">Mon Parcours</a>
+            <a href="#services" class="nav-link hover:text-blue-600 transition">Services</a>
+            <a href="#contact" class="nav-link text-blue-600 font-black">Contact</a>
         </div>
-    </nav>
-
+    </div>
+</nav>
 <section id="accueil" class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center overflow-hidden bg-slate-50">
     <div class="blob-container">
   <div class="blob"></div>
@@ -111,24 +111,27 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div data-aos="fade-up" data-aos-delay="100" class="group p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30">
-                <h3 class="relative z-10 text-2xl font-bold mb-4">Création de Sites</h3>
-                <p class="relative z-10 text-slate-500 group-hover:text-slate-400 mb-6">Des sites vitrines modernes avec HTML/Tailwind pour une image de marque forte.</p>
-                <div class="relative z-10 text-blue-600 font-bold">01</div>
-            </div>
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 no-scrollbar md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
+    
+    <div data-aos="fade-up" data-aos-delay="100" class="group min-w-[85vw] snap-center p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30 md:min-w-full">
+        <h3 class="relative z-10 text-2xl font-bold mb-4">Création de Sites</h3>
+        <p class="relative z-10 text-slate-500 group-hover:text-slate-400 mb-6">Des sites vitrines modernes avec HTML/Tailwind pour une image de marque forte.</p>
+        <div class="relative z-10 text-blue-600 font-bold">01</div>
+    </div>
 
-            <div data-aos="fade-up" data-aos-delay="200" class="group p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30">
-                <h3 class="relative z-10 text-2xl font-bold mb-4">Responsive Design</h3>
-                <p class="relative z-10 text-slate-500 group-hover:text-slate-400 mb-6">Votre site sera parfaitement adapté sur smartphone, tablette et ordinateur.</p>
-                <div class="relative z-10 text-blue-600 font-bold">02</div>
-            </div>
+    <div data-aos="fade-up" data-aos-delay="200" class="group min-w-[85vw] snap-center p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30 md:min-w-full">
+        <h3 class="relative z-10 text-2xl font-bold mb-4">Responsive Design</h3>
+        <p class="relative z-10 text-slate-500 group-hover:text-slate-400 mb-6">Votre site sera parfaitement adapté sur smartphone, tablette et ordinateur.</p>
+        <div class="relative z-10 text-blue-600 font-bold">02</div>
+    </div>
 
-            <div data-aos="fade-up" data-aos-delay="300" class="group p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30">
-                <h3 class="relative z-10 text-2xl font-bold mb-4">Mise en ligne</h3>
-                <p class="relative z-10 text-slate-500 group-hover:text-slate-400 mb-6">Gestion du déploiement, de l'hébergement sécurisé et de votre nom de domaine.</p>
-                <div class="relative z-10 text-blue-600 font-bold">03</div>
-            </div>
+    <div data-aos="fade-up" data-aos-delay="300" class="group min-w-[85vw] snap-center p-10 rounded-[2rem] bg-slate-50 hover:bg-slate-900 hover:text-white transition-all duration-500 border border-transparent hover:border-blue-500/30 md:min-w-full">
+        <h3 class="relative z-10 text-2xl font-bold mb-4">Mise en ligne</h3>
+        <p class="relative z-10 text-slate-500 group-hover:text-slate-400 mb-6">Gestion du déploiement, de l'hébergement sécurisé et de votre nom de domaine.</p>
+        <div class="relative z-10 text-blue-600 font-bold">03</div>
+    </div>
+
+</div>
         </div>
     </div>
 </section>
