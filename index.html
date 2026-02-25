@@ -15,11 +15,17 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="font-extrabold text-xl tracking-tighter uppercase">Studio 19<span class="text-blue-600">.</span></div>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
-                <a href="#accueil" class="hover:text-blue-600 transition">Accueil</a>
-                <a href="#parcours" class="hover:text-blue-600 transition">Mon Parcours</a>
-                <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                <a href="#contact" class="text-blue-600 font-bold">Contact</a>
+            
+            <button id="menu-btn" class="md:hidden text-slate-900 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+<div id="nav-menu" class="hidden absolute top-20 left-4 right-4 bg-white/70 backdrop-blur-xl border border-slate-200/50 flex-col p-8 space-y-6 rounded-[2rem] shadow-2xl shadow-blue-500/10 md:static md:flex md:flex-row md:w-auto md:border-none md:bg-transparent md:p-0 md:space-y-0 md:space-x-8 md:rounded-none md:shadow-none text-sm font-semibold uppercase tracking-widest transition-all">                <a href="#accueil" class="nav-link hover:text-blue-600 transition">Accueil</a>
+                <a href="#parcours" class="nav-link hover:text-blue-600 transition">Mon Parcours</a>
+                <a href="#services" class="nav-link hover:text-blue-600 transition">Services</a>
+                <a href="#contact" class="nav-link text-blue-600 font-bold">Contact</a>
             </div>
         </div>
     </nav>
@@ -196,6 +202,28 @@
                     submitBtn.disabled = false;
                     console.log('FAILED...', error);
                 });
+        });
+    </script>
+<script>
+        // Gestion du menu mobile
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('nav-menu');
+        const links = document.querySelectorAll('.nav-link');
+
+        // Ouvre/Ferme le menu quand on clique sur le bouton burger
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // Ferme le menu quand on clique sur un lien (pour scroller vers la section)
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                }
+            });
         });
     </script>
 </body>
